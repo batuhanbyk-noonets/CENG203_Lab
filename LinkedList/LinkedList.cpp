@@ -35,15 +35,36 @@ return head == nullptr;
 // so the whole project builds from the start.
 void LinkedList::insertAtEnd(int value) // Q2
 {
-// TODO
+ Node* newNode = new Node;
+    newNode->data = value;
+    newNode->next = nullptr;
+
+    // Eğer liste boşsa, yeni düğüm doğrudan head olur
+    if (isEmpty()) {
+        head = newNode;
+        return;
+        }
+
+    // Liste boş değilse, son düğüme kadar git
+    Node* cur = head;
+    while (cur->next != nullptr) {
+        cur = cur->next;
+    }
+    cur->next = newNode;
 }
-int LinkedList::length() const // Q2
+int LinkedList::length() const 
 {
-return 0; // TODO
+    int count = 0;
+    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+        count++;
+    }
+    return count;
 }
-void LinkedList::createFromArray(const int arr[], int n) // Q2
+void LinkedList::createFromArray(const int arr[], int n) 
 {
-// TODO: call insertAtEnd() for every element
+    for (int i = 0; i < n; i++) {
+        insertAtEnd(arr[i]);
+    }
 }
 int LinkedList::search(int value) const // Q3
 {
