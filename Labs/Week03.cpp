@@ -1,6 +1,8 @@
 #include "Labs.h"
 #include "../LinkedList/Node.h"
 #include "../LinkedList/LinkedList.h"
+#include "../LinkedList/CircularList.h"
+#include "../LinkedList/DoublyLinkedList.h"
 #include <iostream>
 using namespace std;
 void runWeek03()
@@ -53,5 +55,18 @@ list.merge(other);
 cout << "[Q7] merged: "; list.display();
 cout << "[Q7] other.isEmpty() = " << other.isEmpty() << endl;
 // ---------- Q8: circular list ----------
+CircularList ring;
+ring.append(7); ring.append(2); ring.append(5); ring.append(4);
+cout << "[Q8] "; ring.display();
+cout << "[Q8] length = " << ring.length() << endl;
+// ---------- Q9: doubly linked list ----------
+DoublyLinkedList dl;
+dl.insertAtEnd(20); dl.insertAtEnd(30); dl.insertAtFront(10);
+cout << "[Q9] "; dl.displayForward();
+cout << "[Q9] "; dl.displayBackward();
+dl.deleteValue(20); dl.deleteValue(30);
+cout << "[Q9] "; dl.displayForward();
+cout << "[Q9] "; dl.displayBackward();
+cout << "[Q9] deleteValue(99) = " << dl.deleteValue(99) << endl;
 
 }
