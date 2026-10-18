@@ -11,6 +11,8 @@
                 "${workspaceFolder}\\main.cpp",
                 "${workspaceFolder}\\Labs\\*.cpp",
                 "${workspaceFolder}\\LinkedList\\*.cpp",
+                "${workspaceFolder}\\Stack\\*.cpp",
+                "${workspaceFolder}\\Queue\\*.cpp",
                 "-o",
                 "${workspaceFolder}\\main.exe"
             ],
