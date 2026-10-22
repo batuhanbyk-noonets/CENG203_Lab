@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:\\Users\\batuhan.buyuk1\\Downloads\\w64devkit\\bin\\g++.exe",
+            "command": "${env:USERPROFILE}\\Downloads\\w64devkit\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -13,6 +13,7 @@
                 "${workspaceFolder}\\LinkedList\\*.cpp",
                 "${workspaceFolder}\\Stack\\*.cpp",
                 "${workspaceFolder}\\Queue\\*.cpp",
+                "${workspaceFolder}\\Recursion\\*.cpp",
                 "-o",
                 "${workspaceFolder}\\main.exe"
             ],

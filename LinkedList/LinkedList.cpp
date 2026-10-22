@@ -147,3 +147,32 @@ void LinkedList::merge(LinkedList& other) // Q7
     }
     other.head = nullptr;                   // artik dugumler bu listenin
 }
+// =============================== Week 5 ===============================
+void LinkedList::displayBackward() const
+{
+    printBackward(head);
+    cout << endl;
+}
+
+void LinkedList::printBackward(const Node* node)
+{
+    if (node == nullptr)
+        return;
+    printBackward(node->next);
+    cout << node->data << " ";
+}
+
+void LinkedList::reverse()
+{
+    head = reverseFrom(head);
+}
+
+Node* LinkedList::reverseFrom(Node* node)
+{
+    if (node == nullptr || node->next == nullptr)
+        return node;
+    Node* newHead = reverseFrom(node->next);
+    node->next->next = node;
+    node->next = nullptr;
+    return newHead;
+}
